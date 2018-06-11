@@ -17,8 +17,8 @@ namespace Microsoft.Research.Science.Data.Imperative
                 throw new InvalidOperationException("DataSet already contains the axis with different type of data");
 
             string munits = null;
-            if (v.Metadata.ContainsKey("Units"))
-                munits = v.Metadata["Units"] as string;
+            if (v.Metadata.ContainsKey("units"))
+                munits = v.Metadata["units"] as string;
             if (units != munits)
                 throw new InvalidOperationException("DataSet already contains the axis with different units");
             if (v.Dimensions[0].Length != length)
@@ -37,7 +37,7 @@ namespace Microsoft.Research.Science.Data.Imperative
         /// <returns>New variable.</returns>
         /// <remarks>
         /// <para>Adds new axis to the dataset, which is a 1d-variable depending on a dimension with name equal to the variable name, 
-        /// and sets its "Units" attribute to given units string. 
+        /// and sets its "units" attribute to given units string. 
         /// Values for the axis are uniform and are defined by a user using min,max and step values, so 
         /// that value[i] = min + step * i.</para>
         /// <para>If the dataset already contains a variable with given name, the method just returns that variable, 
@@ -83,7 +83,7 @@ namespace Microsoft.Research.Science.Data.Imperative
 
             var var = ds.Add<double[]>(name, data, name);
             if (!String.IsNullOrEmpty(units))
-                var.Metadata["Units"] = units;
+                var.Metadata["units"] = units;
             return var;
         }
 
@@ -98,7 +98,7 @@ namespace Microsoft.Research.Science.Data.Imperative
         /// <returns>New variable.</returns>
         /// <remarks>
         /// <para>Adds new axis to the dataset, which is a 1d-variable depending on a dimension with name equal to the variable name, 
-        /// and sets its "Units" attribute to given units string.</para>
+        /// and sets its "units" attribute to given units string.</para>
         /// <para>If the dataset already contains a variable with given name, the method just returns that variable, 
         /// if it has proper type, rank and units. Values are not checked.
         /// </para>
@@ -132,7 +132,7 @@ namespace Microsoft.Research.Science.Data.Imperative
         {
             var var = ds.Add<T>(name, data, name);
             if (!String.IsNullOrEmpty(units))
-                var.Metadata["Units"] = units;
+                var.Metadata["units"] = units;
             return var;
         }
         
@@ -148,7 +148,7 @@ namespace Microsoft.Research.Science.Data.Imperative
         /// <returns>New variable.</returns>
         /// <remarks>
         /// <para>Adds new axis to the dataset, which is a 1d-variable depending on a dimension with name equal to the variable name, 
-        /// and sets its "Units" attribute to given units string. 
+        /// and sets its "units" attribute to given units string. 
         /// Values for the axis are uniform and are defined by a user using min,max and step values, so 
         /// that value[i] = min + step * i.</para>
         /// <para>If the dataset already contains a variable with given name, the method just returns that variable, 
@@ -195,7 +195,7 @@ namespace Microsoft.Research.Science.Data.Imperative
 
             var var = ds.Add<float[]>(name, data, name);
             if (!String.IsNullOrEmpty(units))
-                var.Metadata["Units"] = units;
+                var.Metadata["units"] = units;
             return var;
         }
 
@@ -302,7 +302,7 @@ namespace Microsoft.Research.Science.Data.Imperative
         {
             var var = ds.Add<T>(name, data, dimensions);
             if (!String.IsNullOrEmpty(units))
-                var.Metadata["Units"] = units;
+                var.Metadata["units"] = units;
             return var;
         }
         /// <summary>
@@ -339,7 +339,7 @@ namespace Microsoft.Research.Science.Data.Imperative
         {
             var var = ds.Add<T>(name, data, dimensions);
             if (!String.IsNullOrEmpty(units))
-                var.Metadata["Units"] = units;
+                var.Metadata["units"] = units;
             var.MissingValue = missingValue;
             return var;
         }

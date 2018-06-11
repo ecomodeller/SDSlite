@@ -213,8 +213,8 @@ namespace Microsoft.Research.Science.Data.Utilities
             if (metadata == null)
                 throw new ArgumentNullException("metadata");
 
-            if (metadata.ContainsKey("Units", true))
-                return metadata["Units", true].ToString();
+            if (metadata.ContainsKey("units", true))
+                return metadata["units", true].ToString();
             return null;
         }
 

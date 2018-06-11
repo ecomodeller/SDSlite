@@ -136,9 +136,9 @@ namespace Microsoft.Research.Science.Data
     /// the <see cref="Metadata"/> property.
     /// <code>
     /// Variable v = dataSet["var"];
-    /// v.Metadata["Units"] = "m/s";
+    /// v.Metadata["units"] = "m/s";
     /// . . .
-    /// string units = (string)v.Metadata["Units"];
+    /// string units = (string)v.Metadata["units"];
     /// </code>
     /// </description>
     /// </item>

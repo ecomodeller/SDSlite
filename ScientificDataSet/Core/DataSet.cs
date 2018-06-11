@@ -669,7 +669,7 @@ namespace Microsoft.Research.Science.Data
         ///		v2.PutData(a2);					// ds is committed: v1,v2 and v3 have same shape
         ///		Assert.IsFalse(ds.HasChanges);
         ///
-        ///		v1.Metadata["Units"] = "Days";  // ds is committed (metadata of v1 updated)
+        ///		v1.Metadata["units"] = "Days";  // ds is committed (metadata of v1 updated)
         ///		Assert.IsFalse(ds.HasChanges);
         ///
         ///		var cs = ds.CreateCoordinateSystem("cs", v3);

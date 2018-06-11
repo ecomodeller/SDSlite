@@ -238,15 +238,15 @@ namespace Microsoft.Research.Science.Data
 		/// <code>
 		/// MetadataDictionary metadata = . . . ;
 		/// 
-		/// metadata["Units"] = "meters";
+		/// metadata["units"] = "meters";
 		/// 
 		/// if(metadata.ContainsKey("units", true)) // case-insensitive
 		/// {
-		///		Console.WriteLine(metadata["Units"]); // prints "meters"
+		///		Console.WriteLine(metadata["units"]); // prints "meters"
 		///		Console.WriteLine(metadata["units"]); // throws an exception KeyNotFoundException
 		///		Console.WriteLine(metadata["units", true]); // prints "meters"
-		///		Console.WriteLine(metadata["UNITS", true]); // prints "meters"
-		///		Console.WriteLine(metadata["UnitS", true]); // prints "meters"		
+		///		Console.WriteLine(metadata["units", true]); // prints "meters"
+		///		Console.WriteLine(metadata["units", true]); // prints "meters"		
 		///	}
 		/// </code>
 		/// </example>

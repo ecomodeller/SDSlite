@@ -759,11 +759,11 @@ namespace Microsoft.Research.Science.Data.NetCDF4
                 // It might be DateTime as well
                 NcType atype;
                 IntPtr alen1;
-                res = NetCDF.nc_inq_att(ncid, varid, "Units", out atype, out alen1);
+                res = NetCDF.nc_inq_att(ncid, varid, "units", out atype, out alen1);
                 int alen = (int)alen1;
                 if (res == (int)ResultCode.NC_NOERR && atype == NcType.NC_CHAR)
                 {
-                    string units = NcGetAttText(ncid, varid, "Units", alen, out res);
+                    string units = NcGetAttText(ncid, varid, "units", alen, out res);
                     HandleResult(res);
 
                     if (units == dateTimeUnits)

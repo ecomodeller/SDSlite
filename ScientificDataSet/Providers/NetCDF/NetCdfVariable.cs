@@ -199,7 +199,7 @@ namespace Microsoft.Research.Science.Data.NetCDF4
 
             if (typeof(DataType) == typeof(DateTime))
             {
-                NetCDFDataSet.NcPutAttText(dataSet.NcId, varid, "Units", NetCDFDataSet.dateTimeUnits);
+                NetCDFDataSet.NcPutAttText(dataSet.NcId, varid, "units", NetCDFDataSet.dateTimeUnits);
             }
             else if (typeof(DataType) == typeof(bool))
             {
@@ -346,7 +346,7 @@ namespace Microsoft.Research.Science.Data.NetCDF4
             AttributeTypeMap atm = new AttributeTypeMap(dataSet.NcId, varid);
             /* Updating attributes in the netCDF file */
             foreach (var item in proposedChanges.MetadataChanges)
-                dataSet.WriteNetCdfAttribute(varid, item.Key, item.Value, atm);
+                dataSet.WriteNetCdfAttribute(varid, item.Key.ToLowerInvariant(), item.Value, atm);
 
             // NetCDF doesn't supports storing of arrays of kind A[x:0, y:10]
             // so we keep this actual shape in the reserved attribute.
@@ -399,7 +399,7 @@ namespace Microsoft.Research.Science.Data.NetCDF4
                         sb.Append(axis.Name);
                     }
                     dataSet.WriteNetCdfAttribute(varid, name, sb.ToString(), null);
-                    dataSet.WriteNetCdfAttribute(varid, name + "Name", cs.Name, null);
+                    dataSet.WriteNetCdfAttribute(varid, name + "name", cs.Name, null);
                 }
             }
         }
